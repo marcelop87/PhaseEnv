@@ -49,7 +49,7 @@ if st.button('Run'):
         st.success('Successfully created fluid')
         st.subheader("Results:")
         thermoOps = jNeqSim.thermodynamicOperations.ThermodynamicOperations(neqsim_fluid)
-        thermoOps.calcPTphaseEnvelope2()
+        thermoOps.calcPTphaseEnvelope()
         fig, ax = plt.subplots()
         dewts = [x-273.15 for x in list(thermoOps.getOperation().get("dewT"))]
         dewps = list(thermoOps.getOperation().get("dewP"))
